@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useMemo, useCallback } from 'react'
 import {
   Slate,
@@ -7,6 +8,10 @@ import {
   useReadOnly,
   ReactEditor,
 } from 'slate-react'
+=======
+import React, { useMemo, useCallback } from 'react'
+import { Slate, Editable, withReact, useEditor, useReadOnly, ReactEditor } from 'slate-react'
+>>>>>>> Fix check list example
 import { Editor, Range, Point, createEditor } from 'slate'
 import { css } from 'emotion'
 import { withHistory } from 'slate-history'
@@ -115,11 +120,7 @@ const CheckListItemElement = ({ attributes, children, element }) => {
           checked={checked}
           onChange={event => {
             const path = ReactEditor.findPath(editor, element)
-            Editor.setNodes(
-              editor,
-              { checked: event.target.checked },
-              { at: path }
-            )
+            Editor.setNodes(editor, { checked: event.target.checked }, { at: path })
           }}
         />
       </span>
